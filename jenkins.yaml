@@ -1,3 +1,14 @@
+cloudbees-slack-integration:
+  config:
+    slackToken: "${slackToken}"
+    slackWorkspace: "T010A455W77"
+    users:
+    - id: "ahmed-07007"
+      jenkins: "ahmed-07007"
+      optedIn: true
+      scmId: "ahmed-07007"
+      slack: "REPLACE_USER_EMAIL"
+      slackWorkspace: "T010A455W77"
 cloudbees-pipeline-policies:
   config:
     policies:
@@ -14,7 +25,7 @@ jenkins:
       - key: "BUNDLE_ID"
         value: "hmo0dy-ahmed-07007-controller"
   quietPeriod: 0
-  systemMessage: 'Jenkins configured using CloudBees CI CasC - v2'
+  systemMessage: 'Jenkins configured using CloudBees CI CasC - v5'
 unclassified:
   hibernationConfiguration:
     activities:
@@ -71,8 +82,6 @@ kube:
           memory: false
           mountPath: "/var/maven/"
       yamlMergeStrategy: "override"
-groovy:
-  - url: https://raw.githubusercontent.com/hmo0dy/cloudbees-ci-config-bundle/master/groovy/create-pipeline-template-job.groovy
 credentials:
   system:
     domainCredentials:
