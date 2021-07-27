@@ -1,3 +1,14 @@
+cloudbees-slack-integration:
+  config:
+    slackToken: "${slackToken}"
+    slackWorkspace: "T010A455W77"
+    users:
+    - id: "ahmed-07007"
+      jenkins: "ahmed-07007"
+      optedIn: true
+      scmId: "ahmed-07007"
+      slack: "REPLACE_USER_EMAIL"
+      slackWorkspace: "T010A455W77"
 cloudbees-pipeline-policies:
   config:
     policies:
@@ -7,13 +18,14 @@ cloudbees-pipeline-policies:
       - entirePipelineTimeoutRule:
           maxTime: 60
 jenkins:
+  authorizationStrategy: "cloudBeesRoleBasedAccessControl"
   globalNodeProperties:
   - envVars:
       env:
       - key: "BUNDLE_ID"
         value: "hmo0dy-ahmed-07007-controller"
   quietPeriod: 0
-  systemMessage: 'Jenkins configured using CloudBees CI CasC - v4'
+  systemMessage: 'Jenkins configured using CloudBees CI CasC - v5'
 unclassified:
   hibernationConfiguration:
     activities:
@@ -69,7 +81,7 @@ kube:
       - emptyDirVolume:
           memory: false
           mountPath: "/var/maven/"
-      yamlMergeStrategy: "override"    
+      yamlMergeStrategy: "override"
 credentials:
   system:
     domainCredentials:
